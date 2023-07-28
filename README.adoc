@@ -1,0 +1,15 @@
+# Build Your Custom Migration Application
+
+In this example the Acme Inc. has a custom library `seclib-core`.
+A new release was made and current version is 6.0.0.
+Now all teams using v5 must upgrade to v6 ASAP.
+
+Unfortunately all teams are under heavy load.
+Thus, the `seclib-core` team decided to provide a migration tool `sbm-seclib-upgrade-v5-v6`.
+This tool will automatically upgrade applications from v5 to v6.
+
+The `business-service` team then wants to use the tool to upgrade their code to use `seclib-core` v6.
+
+
+
+
