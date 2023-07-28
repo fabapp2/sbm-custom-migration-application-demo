@@ -5,11 +5,33 @@ A new release was made and current version is 6.0.0.
 Now all teams using v5 must upgrade to v6 ASAP.
 
 Unfortunately all teams are under heavy load.
-Thus, the `seclib-core` team decided to provide a migration tool `sbm-seclib-upgrade-v5-v6`.
+Thus, the `seclib-core` team decided to provide a migration tool `seclib-upgrade-v5-v6`.
 This tool will automatically upgrade applications from v5 to v6.
 
 The `business-service` team then wants to use the tool to upgrade their code to use `seclib-core` v6.
 
+Prerequisites:
 
+* `sbm-core:0.14.0-SNAPSHOT` exists in local Maven repo
+* `seclib-core:5.0.0` and `seclib-core:6.0.0` exist in local Maven repo
 
+Required Steps:
 
+**seclib-core**
+
+* Maven install `seclib-core:5.0.0` and `seclib-core:6.0.0`
+
+**seclib-upgrade-v5-v6**
+
+Implementing the migration tool
+
+* Add dependency to `sbm-core`
+* Create recipe
+** Update `seclib-core` version
+** Remove deprecated code
+** Add annotation
+* Create Spring Boot CLI application
+
+**business-service**
+
+* runs the migration application to upgrade to `seclib-core:6.0.0`

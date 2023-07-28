@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.acme.migrator;
+package com.acme.seclib.migrator;
 
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.SourceFile;
@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * @author Fabian Krüger
  */
-public class MigrateToAnnotation extends JavaIsoVisitor<ExecutionContext> {
+public class MigrateToAnnotationVisitor extends JavaIsoVisitor<ExecutionContext> {
 
 
     public static final String SECURITY_CHECK = "com.acme.seclib.SecurityCheck";

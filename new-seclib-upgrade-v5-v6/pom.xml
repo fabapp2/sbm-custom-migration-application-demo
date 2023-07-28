@@ -9,7 +9,7 @@
         <version>3.1.2</version>
     </parent>
 
-    <groupId>org.acme.seclib</groupId>
+    <groupId>com.acme.seclib</groupId>
     <artifactId>seclib-upgrade-v5-v6</artifactId>
     <version>2.0.0</version>
 

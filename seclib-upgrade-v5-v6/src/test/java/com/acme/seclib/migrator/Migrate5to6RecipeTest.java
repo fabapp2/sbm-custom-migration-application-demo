@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.acme.migrator;
+package com.acme.seclib.migrator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -90,7 +90,7 @@ public class Migrate5to6RecipeTest {
         pc = projectContextInitializer.initProjectContext(baseDir, resources);
 
         // Migrate the deprecated code
-        Recipe migrateRecipe = new GenericOpenRewriteRecipe<>(() -> new MigrateToAnnotation());
+        Recipe migrateRecipe = new GenericOpenRewriteRecipe<>(() -> new MigrateToAnnotationVisitor());
         pc.getProjectJavaSources().apply(migrateRecipe);
 
         // print changed resources (not written to FS)
@@ -119,4 +119,5 @@ public class Migrate5to6RecipeTest {
 //        if(secLib5to6MigrationRecipe.isApplicable(pc))
 //        applyCommand.execute(pc, )
     }
+
 }

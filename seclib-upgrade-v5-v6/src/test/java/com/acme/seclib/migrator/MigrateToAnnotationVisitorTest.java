@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.acme.migrator;
+package com.acme.seclib.migrator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author Fabian Krüger
  */
-public class MigrateToAnnotationRecipeTest {
+public class MigrateToAnnotationVisitorTest {
 
     @Test
     @DisplayName("Migrate from method call to annotation")
@@ -57,9 +57,9 @@ public class MigrateToAnnotationRecipeTest {
                         .withBuildFileHavingDependencies(
                                 "org.projectlombok:lombok:1.18.24",
                                 "org.springframework.boot:spring-boot-starter:2.7.5",
-                                "org.acme.seclib:seclib:6.0.0")
+                                "com.acme.seclib:seclib-core:6.0.0")
                 )
-                .actionUnderTest(new OpenRewriteRecipeAdapterAction(new GenericOpenRewriteRecipe<>(() -> new MigrateToAnnotation())))
+                .actionUnderTest(new OpenRewriteRecipeAdapterAction(new GenericOpenRewriteRecipe<>(() -> new MigrateToAnnotationVisitor())))
                 .verify(pc -> {
                     assertThat(pc.getProjectJavaSources().list().get(0).print()).isEqualTo(
                             """
