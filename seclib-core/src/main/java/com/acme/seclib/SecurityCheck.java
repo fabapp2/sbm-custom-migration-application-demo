@@ -15,9 +15,11 @@
  */
 package com.acme.seclib;
 
+
 /**
  * @author Fabian Krüger
  */
+@Deprecated
 public class SecurityCheck {
 
     public static void verifyResult(Object response) {
